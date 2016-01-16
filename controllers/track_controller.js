@@ -34,6 +34,13 @@ exports.create = function (req, res) {
 	var id = track.name.split('.')[0];
 	var name = track.originalname.split('.')[0];
 
+for (track in track_model.tracks){
+	if (name == track_model.tracks[track].name) {
+		res.redirect('/tracks')
+		return
+	}
+}
+
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + id + '.mp3';
 	fs.writeFile('/var/CDPSfy/public/media/' + id + '.mp3', track.buffer, function(err) {
@@ -48,7 +55,7 @@ exports.create = function (req, res) {
 		parameters:{name: name, id: id, url: url},
 		headers:{"Content-Type": "application/json"} 
 	};
-
+	//Recorremos las direcciones de los servidores para hacer el post
 	for (i in dir) {
 		client.post(dir[i], args, function(response){
 		}).on('error', function(err){
@@ -80,6 +87,7 @@ exports.destroy = function (req, res) {
 		headers:{"Content-Type": "application/json"} 
 	};
 
+	//Recorremos las direcciones de los servidores para hacer el .delete
 	for (i in dirDel) {
 		client.delete(dirDel[i], args, function(response){
 		}).on('error', function(err){
