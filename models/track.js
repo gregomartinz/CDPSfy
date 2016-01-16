@@ -12,18 +12,18 @@ track_id: {
 exports.tracks = {
 	1: {
 		name: 'Cute',
-		url: './public/media/Cute.mp3'
+		url: '/media/Cute.mp3'
 	},
 	2: {
 		name: 'Dubstep',
-		url: './public/media/Dubstep.mp3'
+		url: '/media/Dubstep.mp3'
 	},
 	3: {
 		name: 'Epic',
-		url: './public/media/Epic.mp3'
+		url: '/media/Epic.mp3'
 	},
 	4: {
 		name: 'Littleidea',
-		url: './public/media/Littleidea.mp3'
+		url: '/media/Littleidea.mp3'
 	}
 };
