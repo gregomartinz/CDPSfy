@@ -35,7 +35,7 @@ exports.create = function (req, res) {
 	var name = track.originalname.split('.')[0];
 
 for (track in track_model.tracks){
-	if (name == track_model.tracks[track].name) {
+	if (name == track_model.tracks[track].name || name == null) {
 		res.redirect('/tracks')
 		return
 	}
