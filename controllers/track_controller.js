@@ -52,10 +52,8 @@ exports.create = function (req, res) {
 	};
 
 	for (i in dir) {
-		client.post(dir[i], args, function(data,response){
-
+		client.post(dir[i], args, function(response){
 		}).on('error', function(err){
-
 		});
 	};
 	// Escribe los metadatos de la nueva canción en el registro.
@@ -80,16 +78,13 @@ exports.destroy = function (req, res) {
 	client = new Client();
 
 	var args = {
-		//data: { name: track.name },
 		parameters:{id: trackId},
 		headers:{"Content-Type": "application/json"} 
 	};
 
 	for (i in dirDel) {
-		client.delete(dirDel[i], args, function(data,response){
-
+		client.delete(dirDel[i], args, function(response){
 		}).on('error', function(err){
-
 		});
 	};
 
