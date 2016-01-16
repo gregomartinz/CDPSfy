@@ -34,14 +34,12 @@ exports.create = function (req, res) {
 	var id = track.name.split('.')[0];
 	var name = track.originalname.split('.')[0];
 
-	// Aquí debe implementarse la escritura del fichero de audio (track.buffer) en tracks.cdpsfy.es
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + id + '.mp3';
 	fs.writeFile('/var/CDPSfy/public/media/' + id + '.mp3', track.buffer, function(err) {
 		if(err){
 			return console.log(err);
 		}
-
 	});
 	
 	client = new Client();
