@@ -30,23 +30,23 @@ exports.show = function (req, res) {
 // - Escribir en el registro la verdadera url generada al añadir el fichero en el servidor tracks.cdpsfy.es
 exports.create = function (req, res) {
 	var track = req.files.track;
-	//console.log('Nuevo fichero de audio. Datos: ', track);
+	//Comprobamos que se ha seleccionado un track 
 	if (track == undefined){
 		res.redirect('/tracks')
 		return
 	}
 	var id = track.name.split('.')[0];
 	var name = track.originalname.split('.')[0];
-
-for (track in track_model.tracks){
-	if (name == track_model.tracks[track].name) {
-		res.redirect('/tracks')
-		return
+	//Comrpobamos que no haya otro track igual
+	for (track in track_model.tracks){
+		if (name == track_model.tracks[track].name) {
+			res.redirect('/tracks')
+			return
+		}
 	}
-}
-
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + id + '.mp3';
+	//Escribimos el archivo
 	fs.writeFile('/var/CDPSfy/public/media/' + id + '.mp3', track.buffer, function(err) {
 		if(err){
 			return console.log(err);
@@ -70,7 +70,6 @@ for (track in track_model.tracks){
 		name: name,
 		url: url
 	};
-
 	res.redirect('/tracks');
 };
 
