@@ -52,12 +52,11 @@ exports.create = function (req, res) {
 	};
 
 	for (i in dir) {
-		/*client.post(i, args, function(data,response){
+		client.post(dir[i], args, function(data,response){
 
 		}).on('error', function(err){
 
 		});
-*/	console.log(dir[i])
 	};
 	// Escribe los metadatos de la nueva canción en el registro.
 	track_model.tracks[id] = {
@@ -87,7 +86,7 @@ exports.destroy = function (req, res) {
 	};
 
 	for (i in dirDel) {
-		client.delete(i, args, function(data,response){
+		client.delete(dirDel[i], args, function(data,response){
 
 		}).on('error', function(err){
 
