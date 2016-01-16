@@ -47,13 +47,13 @@ exports.create = function (req, res) {
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + id + '.mp3';
 	//Escribimos el archivo
-	fs.writeFile('/var/CDPSfy/public/media/' + name + '.mp3', track.buffer, function(err) {
+	fs.writeFile('/var/CDPSfy/public/media/' + id + '.mp3', track.buffer, function(err) {
 		if(err){
 			return console.log(err);
 		}
 	});
 	
-	client = new Client();
+	var client = new Client();
 
 	var args = {
 		parameters:{name: name, id: id, url: url},
