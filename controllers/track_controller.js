@@ -31,11 +31,15 @@ exports.show = function (req, res) {
 exports.create = function (req, res) {
 	var track = req.files.track;
 	console.log('Nuevo fichero de audio. Datos: ', track);
+	if (track == undefined){
+		res.redirect('/tracks')
+		return
+	}
 	var id = track.name.split('.')[0];
 	var name = track.originalname.split('.')[0];
 
 for (track in track_model.tracks){
-	if (name == track_model.tracks[track].name || name == null) {
+	if (name == track_model.tracks[track].name) {
 		res.redirect('/tracks')
 		return
 	}
