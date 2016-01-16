@@ -52,11 +52,12 @@ exports.create = function (req, res) {
 	};
 
 	for (i in dir) {
-		client.post(i, args, function(data,response){
+		/*client.post(i, args, function(data,response){
 
 		}).on('error', function(err){
 
 		});
+*/	console.log(i)
 	};
 	// Escribe los metadatos de la nueva canción en el registro.
 	track_model.tracks[id] = {
