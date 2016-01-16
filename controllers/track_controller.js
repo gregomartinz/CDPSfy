@@ -45,7 +45,7 @@ exports.create = function (req, res) {
 		}
 	}
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
-	var url = '/media/' + id + '.mp3';
+	var url = './mnt/nas/' + id + '.mp3';
 	//Escribimos el archivo
 	fs.writeFile('/mnt/nas/' + id + '.mp3', track.buffer, function(err) {
 		if(err){
@@ -80,7 +80,7 @@ exports.destroy = function (req, res) {
 	var trackId = req.params.trackId;
 
 	// Aquí debe implementarse el borrado del fichero de audio indetificado por trackId en tracks.cdpsfy.es
-	var filePath = '/var/CDPSfy/public/media/' + trackId + '.mp3';
+	var filePath = '/mnt/nas/' + trackId + '.mp3';
 	fs.unlinkSync(filePath);
 
 	client = new Client();
