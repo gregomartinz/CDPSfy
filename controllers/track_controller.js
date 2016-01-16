@@ -30,7 +30,7 @@ exports.show = function (req, res) {
 // - Escribir en el registro la verdadera url generada al añadir el fichero en el servidor tracks.cdpsfy.es
 exports.create = function (req, res) {
 	var track = req.files.track;
-	console.log('Nuevo fichero de audio. Datos: ', track);
+	//console.log('Nuevo fichero de audio. Datos: ', track);
 	if (track == undefined){
 		res.redirect('/tracks')
 		return
