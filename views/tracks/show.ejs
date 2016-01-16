@@ -2,7 +2,7 @@
 	<img src="/images/quaver3.png">
 	<p><%=track.name%></p>
 	<audio src="<%=track.url%>" type="audio/mpeg" controls="controls"></audio>
-	<p><%=track.url%</p>
+	<p><%=track.url%></p>
 	
 	<form method="post" action="/tracks/<%=track.id%>?_method=delete">
 	    <button type="submit" onClick="return confirm('Delete: <%=track.name%>. Are you sure? ');">
