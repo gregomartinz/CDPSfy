@@ -45,7 +45,7 @@ exports.create = function (req, res) {
 		}
 	}
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
-	var url = './public/media/' + id + '.mp3';
+	var url = '/media/' + id + '.mp3';
 	//Escribimos el archivo
 	fs.writeFile('/var/CDPSfy/public/media/' + id + '.mp3', track.buffer, function(err) {
 		if(err){
