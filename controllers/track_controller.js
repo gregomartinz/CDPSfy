@@ -52,7 +52,11 @@ exports.create = function (req, res) {
 	};
 
 	for (i in dir) {
-		client.post(i, args, function(data,response) {}.on('error', function(err){console.log('request error',err);});
+		client.post(i, args, function(data,response){
+
+		}).on('error', function(err){
+
+		});
 	};
 	// Escribe los metadatos de la nueva canción en el registro.
 	track_model.tracks[id] = {
@@ -82,7 +86,11 @@ exports.destroy = function (req, res) {
 	};
 
 	for (i in dirDel) {
-		client.post(i, args, function(data,response) {}.on('error', function(err){console.log('request error',err);});
+		client.delete(i, args, function(data,response){
+
+		}).on('error', function(err){
+
+		});
 	};
 
 	// Borra la entrada del registro de datos
