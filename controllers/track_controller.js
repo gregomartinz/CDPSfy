@@ -57,7 +57,7 @@ exports.create = function (req, res) {
 		}).on('error', function(err){
 
 		});
-*/	console.log(i)
+*/	console.log(dir[i])
 	};
 	// Escribe los metadatos de la nueva canción en el registro.
 	track_model.tracks[id] = {
