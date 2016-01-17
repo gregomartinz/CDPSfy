@@ -1,21 +1,22 @@
-## CDPSfy
+## CDPSfy versión mejorada
 
+Es importante tener el escenario creado previamente para un correcto funcionamineto.
 ### Dependencies
 
 - node.js
 - npm
 
-### How to install
+### Cómo instalar
 
 <pre>
-git clone https://github.com/aalonsog/CDPSfy.git
+git clone https://github.com/gregomartinz/CDPSfy
 cd CDPSfy
 npm install
 </pre>
 
 ### How to configure
 
-+ The server is configured to listen in port 8080. You can modify that folder using the env variable 'PORT'
+El servidor está diseñado para funcionar sobre 10.1.1.1, aunque si se completa el escenario se puede entrar desde www.cdpsfy.es
 
 ### How to run
 
