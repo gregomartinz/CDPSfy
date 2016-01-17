@@ -1,5 +1,5 @@
 ## CDPSfy versión mejorada
-Autores: Gregorio Martínez Luque - Carlos Guillermo Torre Barrenechea 
+####Autores: Gregorio Martínez Luque - Carlos Guillermo Torre Barrenechea 
 
 Es importante tener el escenario creado previamente para un correcto funcionamineto.
 ### Necesario
