@@ -38,12 +38,12 @@ exports.create = function (req, res) {
 	var id = track.name.split('.')[0];
 	var name = track.originalname.split('.')[0];
 	//Comrpobamos que no haya otro track igual
-	for (track in track_model.tracks){
+	/*for (track in track_model.tracks){
 		if (name == track_model.tracks[track].name) {
 			res.redirect('/tracks')
 			return
 		}
-	}
+	}*/
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + name + '.mp3';
 	//Escribimos el archivo
