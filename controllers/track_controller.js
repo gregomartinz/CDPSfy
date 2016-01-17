@@ -47,7 +47,7 @@ exports.create = function (req, res) {
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + name + '.mp3';
 	//Escribimos el archivo
-	fs.writeFile('/var/CDPSfy/public/' + url, track.buffer, function(err) {
+	fs.writeFile('/mnt/nas' + url, track.buffer, function(err) {
 		if(err){
 			return console.log(err);
 		}
