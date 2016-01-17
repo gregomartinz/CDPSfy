@@ -1,7 +1,7 @@
 ## CDPSfy versión mejorada
 
 Es importante tener el escenario creado previamente para un correcto funcionamineto.
-### Dependencies
+### Necesario
 
 - node.js
 - npm
@@ -14,14 +14,14 @@ cd CDPSfy
 npm install
 </pre>
 
-### How to configure
+### Configuración básica
 
 El servidor está diseñado para funcionar sobre 10.1.1.1, aunque si se completa el escenario se puede entrar desde www.cdpsfy.es
 
-### How to run
+### Funcionamiento
 
 <pre>
 npm start
 </pre>
 
-#### Default music: http://www.bensound.com
+#### Música por defecto en: http://www.bensound.com
