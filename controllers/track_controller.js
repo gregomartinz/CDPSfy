@@ -47,7 +47,7 @@ exports.create = function (req, res) {
 	// Esta url debe ser la correspondiente al nuevo fichero en tracks.cdpsfy.es
 	var url = '/media/' + name + '.mp3';
 	//Escribimos el archivo
-	fs.writeFile('/mnt/nas/' + name + '.mp3', track.buffer, function(err) {
+	fs.writeFile('/var/CDPSfy/public/' + url, track.buffer, function(err) {
 		if(err){
 			return console.log(err);
 		}
@@ -61,7 +61,7 @@ exports.create = function (req, res) {
 	};
 	//Recorremos las direcciones de los servidores para hacer el post
 	for (i in dir) {
-		client.post(dir[i], args, function(response){
+		client.post(dir[i], args, function(data,response){
 		}).on('error', function(err){
 		});
 	};
@@ -78,12 +78,14 @@ exports.create = function (req, res) {
 // - Eliminar en tracks.cdpsfy.es el fichero de audio correspondiente a trackId
 exports.destroy = function (req, res) {
 	var trackId = req.params.trackId;
-
+	var tracks = track_model.tracks;
+	var name = tracks[trackId].name
+	var url = tracks[trackId].url
 	// Aquí debe implementarse el borrado del fichero de audio indetificado por trackId en tracks.cdpsfy.es
-	var filePath = '/mnt/nas/' + trackId + '.mp3';
+	var filePath = '/var/CDPSfy/public/' + url;
 	fs.unlinkSync(filePath);
 
-	client = new Client();
+	var client = new Client();
 
 	var args = {
 		parameters:{id: trackId},
@@ -92,7 +94,7 @@ exports.destroy = function (req, res) {
 
 	//Recorremos las direcciones de los servidores para hacer el .delete
 	for (i in dirDel) {
-		client.delete(dirDel[i], args, function(response){
+		client.delete(dirDel[i], args, function(data,response){
 		}).on('error', function(err){
 		});
 	};
